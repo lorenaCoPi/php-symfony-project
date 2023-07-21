@@ -1,0 +1,27 @@
+
+{% extends "RickAndMorty/baseRickMorty.html.twig" %}
+
+{% block contenido %} 
+            <div class="container">
+<h5>Usuario: {{app.user.name|default("")}}</h5>
+                <div class="row">
+                    <div class="col text-center"><h2>{{character.name}} - ID: {{character.id}}</h2></div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <img src="{{character.image}}">
+                    </div>
+                    <div class="col">
+                        <div class="row">
+                            <p class="col">Status: {{character.status}}</p>
+                        </div>
+                    </div>
+                  <div class="row">
+                            <ul>
+                               {% for locations in character.location %}
+                               <ol> Localización: {{ locations.name }}</ol>
+                              {% endfor %} 
+                            </ul>
+                </div>
+            </div>
+{% endblock %}

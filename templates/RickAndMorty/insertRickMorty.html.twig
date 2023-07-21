@@ -1,0 +1,7 @@
+{% extends "RickAndMorty/baseRickMorty.html.twig" %}
+
+{% block contenido %} 
+<h5>Usuario: {{app.user.name|default("")}}</h5>
+{{form(rickAndMortyForm)}}
+               
+{% endblock %}
